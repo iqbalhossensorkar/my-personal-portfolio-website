@@ -1,6 +1,8 @@
-import { FaGithub, FaNodeJs, FaReact } from 'react-icons/fa';
+import { FaNodeJs, FaReact } from 'react-icons/fa';
 import { SiExpress, SiMongodb } from 'react-icons/si';
 import bdcuisine from '../assets/projects/bangladeshi-cuisine2.png'
+import Button from '../Button/Button';
+import ButtonSecond from '../Button/ButtonSecond';
 
 const Showcase3 = () => {
     return (
@@ -19,9 +21,15 @@ const Showcase3 = () => {
                             <div className='px-4 py-2 bg-[#c6c6c6]'><SiExpress /></div>
                         </div>
                         <div className='mt-2 flex items-center justify-between'>
-                            <button className='btn' onClick={() => window.open('https://bangladeshi-cuisine-second.web.app/', '_blank')}>Live Site</button>
-                            <button className='btn btn-circle' onClick={() => window.open('https://github.com/iqbalhossensorkar/bangladeshi-cuisine-client', '_blank')}><FaGithub /></button>
-                            <button className='btn btn-circle' onClick={() => window.open('https://github.com/iqbalhossensorkar/bangladeshi-cuisine-server', '_blank')}><FaGithub /></button>
+                            <div onClick={() => window.open('https://bangladeshi-cuisine-second.web.app/', '_blank')}>
+                                <Button />
+                            </div>
+                            <div onClick={() => window.open('https://github.com/iqbalhossensorkar/bangladeshi-cuisine-client', '_blank')}>
+                                <ButtonSecond />
+                            </div>
+                            <div onClick={() => window.open('https://github.com/iqbalhossensorkar/bangladeshi-cuisine-server', '_blank')}>
+                                <ButtonSecond />
+                            </div>
                         </div>
                     </div>
                 </div>

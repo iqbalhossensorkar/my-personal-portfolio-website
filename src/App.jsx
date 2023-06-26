@@ -1,5 +1,5 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import { HashLink as Link, NavHashLink as NavLink } from 'react-router-hash-link';
+import { HashLink as Link } from 'react-router-hash-link';
 import logo from './assets/logo.png'
 import Home from './Home/Home';
 import About from './About/About';
@@ -16,13 +16,13 @@ const App = () => {
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#18C08B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M4 6h16M4 12h8m-8 6h16" /></svg>
               </label>
-              <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                <li><NavLink smooth to="/#header">Home</NavLink></li>
-                <li><NavLink smooth to="/#about">About</NavLink></li>
-                <li><NavLink smooth to="/#projects">Projects</NavLink></li>
-                <li><NavLink smooth to="/#contact">Contact Me</NavLink></li>
+              <ul tabIndex={0} className="menu menu-compact dropdown-content shadow bg-base-100 rounded-box w-40">
+                <li><Link smooth to="/#header">Home</Link></li>
+                <li><Link smooth to="/#about">About</Link></li>
+                <li><Link smooth to="/#projects">Projects</Link></li>
+                <li><Link smooth to="/#contact">Contact Me</Link></li>
               </ul>
             </div>
             <Link to='/' className=""><img src={logo} alt="" className='h-10' /></Link>
@@ -36,17 +36,28 @@ const App = () => {
             </ul>
           </div>
           <div className="navbar-end hidden lg:flex">
-            <button className='btn btn-outline border-2 hover:bg-[#70DCBA] hover:border-[#70DCBA] text-[#18C08B]'>
+            <Link to="/#contact" className='btn btn-outline border-2 hover:bg-[#70DCBA] hover:border-[#70DCBA] text-[#18C08B]'>
               Send me
               <HiRocketLaunch className='ml-2'></HiRocketLaunch>
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
+      <div style={{scrollBehavior: 'smooth', scrollSnapType: 'y mendatory'}}>
       <Home />
+      </div>
+      <div style={{scrollBehavior: 'smooth', scrollSnapType: 'y mendatory'}}>
       <About />
+      </div>
+      <div style={{scrollBehavior: 'smooth', scrollSnapType: 'y mendatory'}}>
       <Projects />
+      </div>
+      <div style={{scrollBehavior: 'smooth', scrollSnapType: 'y mendatory'}}>
       <Contact />
+      </div>
+ 
+
+ 
       <Footer />
     </Router>
   );
